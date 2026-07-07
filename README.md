@@ -2,6 +2,8 @@
 
 by Galacticica
 
+Repository: https://github.com/Galacticica/vscode-piet
+
 Create, edit, debug, and run [Piet](https://www.dangermouse.net/esoteric/piet.html) programs inside VS Code.
 
 A `.piet` file is a PNG image stored at one pixel per codel. Opening one shows a paintable

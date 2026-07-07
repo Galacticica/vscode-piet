@@ -7,6 +7,11 @@
   "author": {
     "name": "Galacticica"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Galacticica/vscode-piet.git"
+  },
+  "homepage": "https://github.com/Galacticica/vscode-piet",
   "license": "MIT",
   "engines": {
     "vscode": "^1.85.0"
