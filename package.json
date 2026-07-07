@@ -1,0 +1,95 @@
+{
+  "name": "piet-editor",
+  "displayName": "Piet Editor",
+  "description": "Paint, run, and debug Piet — the esolang where programs are abstract art. Pixel-grid editor for .piet files with live command hints, a step debugger (stack, DP/CC, breakpoints), PNG import/export, and a built-in interpreter — no external tools required.",
+  "version": "0.3.2",
+  "publisher": "Galacticica",
+  "author": {
+    "name": "Galacticica"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Visualization"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "piet.editor",
+        "displayName": "Piet Editor",
+        "selector": [
+          {
+            "filenamePattern": "*.piet"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "piet.new",
+        "title": "Piet: New Piet File"
+      },
+      {
+        "command": "piet.run",
+        "title": "Piet: Run Piet File",
+        "icon": "$(play)"
+      },
+      {
+        "command": "piet.exportPng",
+        "title": "Piet: Export as PNG"
+      },
+      {
+        "command": "piet.importPng",
+        "title": "Piet: Import PNG as .piet"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "piet.run",
+          "when": "activeCustomEditorId == piet.editor",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "piet.run",
+          "when": "activeCustomEditorId == piet.editor"
+        },
+        {
+          "command": "piet.exportPng",
+          "when": "activeCustomEditorId == piet.editor"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Piet",
+      "properties": {
+        "piet.runCommand": {
+          "type": "string",
+          "default": "",
+          "description": "Optional external command to run Piet programs in the integrated terminal ({file} is replaced with the file path), e.g. \"uv run python piet/piet.py {file}\". Leave empty to use the extension's built-in interpreter."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "esbuild src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "typecheck": "tsc --noEmit",
+    "pretest": "esbuild src/png.ts src/runner.ts --bundle --external:vscode --platform=node --format=cjs --outdir=out-test --out-extension:.js=.cjs",
+    "test": "node --test",
+    "package": "vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.28.1",
+    "typescript": "^5.4.0"
+  }
+}
