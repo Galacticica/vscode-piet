@@ -4,6 +4,8 @@ by Galacticica
 
 Repository: https://github.com/Galacticica/vscode-piet
 
+Marketplace: https://marketplace.visualstudio.com/items?itemName=Galacticica.piet-editor
+
 Create, edit, debug, and run [Piet](https://www.dangermouse.net/esoteric/piet.html) programs inside VS Code.
 
 A `.piet` file is a PNG image stored at one pixel per codel. Opening one shows a paintable
@@ -39,7 +41,7 @@ color grid instead of an image preview.
 npm install
 npm run compile
 npm run package        # produces piet-editor-<version>.vsix
-code --install-extension piet-editor-0.1.0.vsix
+code --install-extension piet-editor-0.3.3.vsix
 ```
 
 Or open this folder in VS Code and press F5 for a development host.

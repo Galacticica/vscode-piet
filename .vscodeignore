@@ -5,3 +5,4 @@ tsconfig.json
 *.vsix
 test/**
 out-test/**
+*:Zone.Identifier

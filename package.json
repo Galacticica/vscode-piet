@@ -2,7 +2,7 @@
   "name": "piet-editor",
   "displayName": "Piet Editor",
   "description": "Paint, run, and debug Piet — the esolang where programs are abstract art. Pixel-grid editor for .piet files with live command hints, a step debugger (stack, DP/CC, breakpoints), PNG import/export, and a built-in interpreter — no external tools required.",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "publisher": "Galacticica",
   "author": {
     "name": "Galacticica"
@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/Galacticica/vscode-piet",
   "license": "MIT",
+  "icon": "Piet_Hello_World.png",
   "engines": {
     "vscode": "^1.85.0"
   },
